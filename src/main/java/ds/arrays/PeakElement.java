@@ -9,7 +9,7 @@ import org.apache.commons.lang3.ArrayUtils;
  * Note: The generated output will always be 1 if the index that you return is correct.
  * Otherwise output will be 0.
  *
- * Time complexity = O(log n)
+ * Time complexity = O(n)
  */
 public class PeakElement {
 
