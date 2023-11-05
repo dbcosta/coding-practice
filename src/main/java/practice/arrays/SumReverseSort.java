@@ -6,6 +6,6 @@ package practice.arrays;
  */
 public class SumReverseSort {
     public static void main(String[] args) {
-        int a[]={3,4,5,1,8,2,7};
+        int[] a ={3,4,5,1,8,2,7};
     }
 }

@@ -1,10 +1,10 @@
-package practice.java8;
+package practice.ds;
 
 import java.util.Arrays;
 
 public class Queue {
 
-    private final int arr[] = new int[5];
+    private final int[] arr = new int[5];
     private int rear=-1,front=-1;
 
     private void enqueue(int element){
@@ -24,7 +24,7 @@ public class Queue {
         }
     }
 
-    private void print(int arr[]){
+    private void print(int[] arr){
         System.out.println(Arrays.toString(arr));
     }
 

@@ -1,4 +1,4 @@
-package practice.java8;
+package practice.ds;
 
 import java.util.Arrays;
 
@@ -6,7 +6,7 @@ public class Stack<T> {
 
     private int top = -1;
 
-    private void push(T arr[],T element){
+    private void push(T[] arr, T element){
         if(top>=arr.length-1){
             System.out.println("stack overflow!");
         }else {
@@ -15,7 +15,7 @@ public class Stack<T> {
         }
     }
 
-    private T pop(T arr[]){
+    private T pop(T[] arr){
         if(top<=-1){
             System.out.println("stack underflow!");
             return null;
@@ -24,13 +24,13 @@ public class Stack<T> {
         }
     }
 
-    private void print(T arr[]){
+    private void print(T[] arr){
         System.out.println(Arrays.toString(arr));
     }
 
     public static void main(String[] args) {
         Stack stack = new Stack();
-        String arr[] = new String[5];
+        String[] arr = new String[5];
         stack.push(arr,"100");
         stack.push(arr,"200");
         stack.push(arr,"300");

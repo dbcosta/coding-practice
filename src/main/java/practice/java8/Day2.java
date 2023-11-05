@@ -57,7 +57,7 @@ public class Day2 {
     }
 
     public static void main(String[] args) {
-        int arr[] = {4,5,6,-1,-2,9,0,5,5,6};
+        int[] arr = {4,5,6,-1,-2,9,0,5,5,6};
         String[] str = {"java","python","javascript","java"};
         Day2 day2 = new Day2();
         System.out.println(day2.findElement(arr,true));

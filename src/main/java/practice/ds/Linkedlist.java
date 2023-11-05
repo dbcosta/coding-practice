@@ -1,4 +1,4 @@
-package practice.java8;
+package practice.ds;
 
 /**
  * Linkedlist
@@ -11,12 +11,13 @@ package practice.java8;
 public class Linkedlist<T> {
 
     private Node<T> head;
-    private static class Node<T>{
+    public static class Node<T>{
         T data;
         Node<T> next;
 
-        Node(T data){
+        Node(T data,Node<T> next){
             this.data=data;
+            this.next=next;
         }
     }
 
@@ -51,6 +52,20 @@ public class Linkedlist<T> {
         return slow.data;
     }
 
+    private boolean hasLoop(Linkedlist<T> linkedlist){
+        Node<T> fast,slow;
+        fast = slow = linkedlist.head;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
+
     private Linkedlist<T> reverseList(Linkedlist<T> linkedlist){
         Node<T> curr=linkedlist.head,prev = null,temp;
         while(curr!=null){
@@ -63,20 +78,40 @@ public class Linkedlist<T> {
         return linkedlist;
     }
 
+    private Linkedlist<T> pairWiseSwap(Linkedlist<T> linkedlist){
+        Node<T> newHead = linkedlist.head.next;
+        Node<T> curr = linkedlist.head;
+
+        while(curr!=null && curr.next!=null){
+            Node<T> temp = curr.next.next;
+            curr.next.next=curr;
+            curr.next=temp;
+            curr=temp;
+        }
+        linkedlist.head=newHead;
+        return linkedlist;
+    }
+
     public static void main(String[] args) {
         Linkedlist linkedlist = new Linkedlist();
-        Node<Integer> integerNode1 = new Node<>(1);
-        Node<String> integerNode2 = new Node<>("2");
-        Node<Integer> integerNode3 = new Node<>(3);
-        Node<Integer> integerNode4 = new Node<>(4);
+        Node<Integer> integerNode1 = new Node<>(1,null);
+        Node<String> integerNode2 = new Node<>("2",null);
+        Node<Integer> integerNode3 = new Node<>(3,null);
+        Node<Integer> integerNode4 = new Node<>(4,null);
+        Node<Integer> integerNode5 = new Node<>(5,null);
+        //Node<Integer> integerNode5 = new Node<>(5,integerNode4);
 
         linkedlist.createList(integerNode1, linkedlist);
         linkedlist.createList(integerNode2, linkedlist);
         linkedlist.createList(integerNode3, linkedlist);
         linkedlist.createList(integerNode4, linkedlist);
+        linkedlist.createList(integerNode5, linkedlist);
         linkedlist.printList(linkedlist);
-        System.out.println(linkedlist.findMiddle(linkedlist));
+        System.out.println("Middle:"+linkedlist.findMiddle(linkedlist));
+        System.out.println("Has loop:"+linkedlist.hasLoop(linkedlist));
         linkedlist.reverseList(linkedlist);
+        linkedlist.printList(linkedlist);
+        linkedlist.pairWiseSwap(linkedlist);
         linkedlist.printList(linkedlist);
     }
 }

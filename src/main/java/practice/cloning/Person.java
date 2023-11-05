@@ -13,9 +13,10 @@ public class Person implements Cloneable{
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        Person personClone = (Person) super.clone();
+        /*Person personClone = (Person) super.clone();
         personClone.setAddress((Address) personClone.getAddress().clone());
-        return personClone;
+        return personClone;*/
+        return super.clone();
     }
 
     @Override
@@ -29,6 +30,10 @@ public class Person implements Cloneable{
     }
 
     public static void main(String[] args) throws CloneNotSupportedException {
+        Person temp = new Person("Sheela",20,5,new Address("302","XYZ","Pune"));
+        Person clone = (Person) temp.clone();
+        System.out.println(temp.equals(clone));
+
         Address personalAddress = new Address("C-101","Maple Street","New York");
         Person person = new Person("Roy",10,160,personalAddress);
         System.out.println("Original Person: "+person);

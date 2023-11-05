@@ -30,7 +30,7 @@ public class Day3 {
      * @param isSmallest
      * @return
      */
-    private String findElement(String arr[], boolean isSmallest){
+    private String findElement(String[] arr, boolean isSmallest){
         return Stream.of(arr).min(Comparator.comparing(String::length)).get();
     }
 
@@ -40,7 +40,7 @@ public class Day3 {
      * @param n
      * @return
      */
-    private int findNthMostRepeated(int arr[], int n) {
+    private int findNthMostRepeated(int[] arr, int n) {
         Map<Integer, Integer> occurrenceMap = new HashMap<>();
         List<Integer> integerList = IntStream.of(arr).boxed().distinct().toList();
         for (int i : integerList) {
@@ -131,7 +131,7 @@ public class Day3 {
      * @param isPositive
      * @return
      */
-    private int findSmallestElement(int arr[], boolean isPositive) {
+    private int findSmallestElement(int[] arr, boolean isPositive) {
         List<Integer> integers = IntStream.of(arr).boxed().toList();
         return isPositive ? integers.stream().filter(i -> i > 0).min(Integer::compareTo).get().intValue() :
                 integers.stream().filter(i -> i < 0).min(Integer::compareTo).get().intValue();

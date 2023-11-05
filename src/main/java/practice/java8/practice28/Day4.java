@@ -65,7 +65,7 @@ public class Day4 {
 
     public static void main(String[] args) {
         Day4 day4 = new Day4();
-        int arr[] = {4,4,4,1,2,3,5,5};
+        int[] arr = {4,4,4,1,2,3,5,5};
         String sentence = "I love Jesus, Jesus is the best.";
         System.out.println("First most repeated element: "+day4.findNthMostRepeatedElement(arr,1));
         System.out.println("First most non-repeated element: "+day4.findNthNonRepeatedElement(arr,1));

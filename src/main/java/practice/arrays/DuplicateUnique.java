@@ -5,6 +5,6 @@ package practice.arrays;
  */
 public class DuplicateUnique {
     public static void main(String[] args) {
-        int a[] = {10,20,30,40,50,10,20};
+        int[] a = {10,20,30,40,50,10,20};
     }
 }
